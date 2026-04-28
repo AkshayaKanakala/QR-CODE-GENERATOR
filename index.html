@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Scanner & Generator</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- QR Generator Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+    <!-- QR Scanner Library -->
+    <script src="https://unpkg.com/html5-qrcode"></script>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>QR Code Scanner & Generator</h1>
+
+        <!-- QR Generator -->
+        <div class="card">
+
+            <h2>Generate QR Code</h2>
+
+            <input 
+                type="text" 
+                id="qrText" 
+                placeholder="Enter text or URL"
+            >
+
+            <br>
+
+            <button onclick="generateQR()">
+                Generate QR
+            </button>
+
+            <div id="qrcode"></div>
+
+        </div>
+
+
+        <!-- QR Scanner -->
+        <div class="card">
+
+            <h2>Scan QR Code</h2>
+
+            <div id="reader"></div>
+
+            <p id="result">
+                Scanned Result: None
+            </p>
+
+            <button onclick="startScanner()">
+                Start Scanner
+            </button>
+
+            <button onclick="stopScanner()">
+                Stop Scanner
+            </button>
+
+        </div>
+
+
+        <!-- Scan QR From Image -->
+        <div class="card">
+
+            <h2>Scan QR from Image</h2>
+
+            <input 
+                type="file" 
+                id="qrImage" 
+                accept="image/*"
+            >
+
+            <br>
+
+            <button onclick="scanImage()">
+                Scan Image
+            </button>
+
+            <p id="imageResult">
+                Image Result: None
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
